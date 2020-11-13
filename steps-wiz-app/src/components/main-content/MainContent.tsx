@@ -1,32 +1,64 @@
 import React, { FC, useState } from "react";
+import StepsTemplate from "../steps-template/StepsTemplate";
 import TextField from "../controls/text-field/TextField";
+import { useFormFields } from "../../lib/hooksLib";
 
 import "./MainContent.css";
 
 const MainContent: FC = () => {
-    const [val, setVal] = useState("");
     const steps = [
-        { id: "1", title: "Examination" },
-        { id: "2", title: "Clinical History" },
-        { id: "3", title: "Technique" },
-        { id: "4", title: "Findings" },
-        { id: "5", title: "Impressions" },
+        { id: "1", title: "Examination", name: "exam" },
+        { id: "2", title: "Clinical History", name: "clinic" },
+        { id: "3", title: "Technique", name: "technique" },
+        { id: "4", title: "Findings", name: "findings" },
+        { id: "5", title: "Impressions", name: "impressions" },
     ];
 
-    const txtChangeHandler = (e: string) => {
-        console.log("On step ", e);
+    const [fields, handleFieldChange] = useFormFields({
+        exam: "1",
+        clinic: "2",
+        technique: "3",
+        findings: "4",
+        impressions: "",
+    });
+
+    const txtChangeHandler = (val: string, name: string) => {
+        handleFieldChange(val, name);
+    };
+
+    const validateEntries = () =>
+        fields.exam.length > 0 &&
+        fields.clinic.length > 0 &&
+        fields.technique.length > 0 &&
+        fields.findings.length > 0 &&
+        fields.impressions.length > 0;
+
+    const handleSubmit = () => {
+        alert("All details saved");
     };
 
     const stepsCollection = steps.map((elem, index) => [
-        <div key={`step-container-${index}`}>
+        <div className={`step-item ${fields[elem.name].length > 0 ? "is-done" : ""}`} key={`step-item-key-${index}`}>
             <h3>{elem?.title || ""}</h3>
-            <TextField placeholder={elem?.title} value={val} onChange={txtChangeHandler} textarea />
+            <TextField
+                placeholder={elem?.title}
+                value={fields[elem.name]}
+                onChange={(val) => txtChangeHandler(val, elem.name)}
+                textarea
+            />
         </div>,
     ]);
 
     return (
         <div className="main-contents">
-            {stepsCollection.length === 0 ? <p>No Steps data available</p> : stepsCollection}
+            <StepsTemplate>
+                {stepsCollection.length === 0 ? <p>No Steps data available</p> : stepsCollection}
+            </StepsTemplate>
+            <div className="btn-container">
+                <button type="button" className="button" disabled={!validateEntries()} onClick={handleSubmit}>
+                    Submit
+                </button>
+            </div>
         </div>
     );
 };

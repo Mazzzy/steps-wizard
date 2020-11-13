@@ -15,21 +15,21 @@ const MainContent: FC = () => {
     ];
 
     const [fields, handleFieldChange] = useFormFields({
-        exam: "1",
-        clinic: "2",
-        technique: "3",
-        findings: "4",
+        exam: "",
+        clinic: "",
+        technique: "",
+        findings: "",
         impressions: "",
     });
 
-    const [currentField, setCurrentField] = useState("exam");
+    const [currentField, setCurrentField] = useState("");
 
     const txtChangeHandler = (val: string, name: string) => {
         handleFieldChange(val, name);
     };
 
     const txtFocusHandler = (event: any, name: string) => {
-        console.log("Namee", name);
+        setCurrentField(name);
     };
 
     const validateEntries = () =>

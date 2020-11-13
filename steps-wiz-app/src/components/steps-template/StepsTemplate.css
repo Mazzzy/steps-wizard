@@ -27,6 +27,7 @@
     left: -30px;
     height: 100%;
     width: 10px;
+    top: 18px;
 }
 .step-item::after {
     content: "";

@@ -2,6 +2,10 @@
     padding: 0 1.87rem;
 }
 
+.main-contents .current h3 {
+    color: #666666;
+}
+
 .btn-container {
     text-align: right;
     padding: 1.2rem;

@@ -22,8 +22,14 @@ const MainContent: FC = () => {
         impressions: "",
     });
 
+    const [currentField, setCurrentField] = useState("exam");
+
     const txtChangeHandler = (val: string, name: string) => {
         handleFieldChange(val, name);
+    };
+
+    const txtFocusHandler = (event: any, name: string) => {
+        console.log("Namee", name);
     };
 
     const validateEntries = () =>
@@ -37,13 +43,23 @@ const MainContent: FC = () => {
         alert("All details saved");
     };
 
+    const dynamicClassNames = (fieldName: string) => {
+        let className = currentField === fieldName ? "current " : "";
+        const field = fields[fieldName];
+        if (field.length > 0) {
+            className += "is-done";
+        }
+        return className;
+    };
+
     const stepsCollection = steps.map((elem, index) => [
-        <div className={`step-item ${fields[elem.name].length > 0 ? "is-done" : ""}`} key={`step-item-key-${index}`}>
+        <div className={`step-item ${dynamicClassNames(elem.name)}`} key={`step-item-key-${index}`}>
             <h3>{elem?.title || ""}</h3>
             <TextField
                 placeholder={elem?.title}
                 value={fields[elem.name]}
                 onChange={(val) => txtChangeHandler(val, elem.name)}
+                onFocus={(event) => txtFocusHandler(event, elem.name)}
                 textarea
             />
         </div>,

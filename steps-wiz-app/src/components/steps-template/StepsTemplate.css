@@ -11,7 +11,7 @@
     left: 15px;
     width: 10px;
     height: 100%;
-    border-left: 2px solid #ccc;
+    border-left: 2px solid #999fa1;
 }
 .step-item {
     position: relative;
@@ -37,23 +37,23 @@
     left: -37px;
     width: 12px;
     height: 12px;
-    border: 2px solid #ccc;
+    border: 2px solid #999fa1;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #141414;
 }
 .step-item.is-done::before {
-    border-left: 2px solid green;
+    border-left: 2px solid #0485ff;
 }
 .step-item.is-done::after {
     content: "✔";
     font-size: 10px;
     color: #fff;
     text-align: center;
-    border: 2px solid green;
-    background-color: green;
+    border: 2px solid #0485ff;
+    background-color: #0485ff;
 }
 .step-item.current::before {
-    border-left: 2px solid green;
+    border-left: 2px solid #0485ff;
 }
 .step-item.current::after {
     content: counter(list);
@@ -64,7 +64,7 @@
     left: -40px;
     font-size: 14px;
     text-align: center;
-    color: green;
-    border: 2px solid green;
-    background-color: white;
+    color: #0485ff;
+    border: 2px solid #0485ff;
+    background-color: #141414;
 }

@@ -1,9 +1,19 @@
 .main-contents {
-    padding: 0 1.87rem;
+    padding: 1.87rem;
+    background-color: #00070b;
+    color: #999fa1;
+}
+
+.main-contents h3 {
+    font-weight: normal;
 }
 
 .main-contents .current h3 {
-    color: #666666;
+    color: #ffffff;
+}
+
+.main-contents .current .input {
+    border-color: #0485ff;
 }
 
 .btn-container {

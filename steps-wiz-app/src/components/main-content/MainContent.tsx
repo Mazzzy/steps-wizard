@@ -40,7 +40,7 @@ const MainContent: FC = () => {
         fields.impressions.length > 0;
 
     const handleSubmit = () => {
-        alert("All details saved");
+        alert("Your report has been successfully submitted");
     };
 
     const dynamicClassNames = (fieldName: string) => {

@@ -24,10 +24,10 @@
 .button {
     -moz-appearance: none;
     -webkit-appearance: none;
-    background: white;
+    background: #0485ff;
     border-radius: 4px;
-    border: 1px solid #4797bf;
-    color: #4797bf;
+    border: 1px solid #0485ff;
+    color: #ffffff;
     padding: 4px 8px;
     text-decoration: none;
     font-size: 0.85rem;
@@ -37,13 +37,12 @@
 }
 
 .button:hover {
-    background-color: #4797bf;
-    color: white;
+    background-color: #046eff;
     cursor: pointer;
 }
 
 .button:disabled {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
+    border: 1px solid #999fa1;
+    background-color: #141414;
+    color: #999fa1;
 }

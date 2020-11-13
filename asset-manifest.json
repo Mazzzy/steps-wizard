@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/steps-wizard/static/css/main.f82ff9c8.chunk.css",
+    "main.js": "/steps-wizard/static/js/main.5ba95420.chunk.js",
+    "main.js.map": "/steps-wizard/static/js/main.5ba95420.chunk.js.map",
+    "runtime-main.js": "/steps-wizard/static/js/runtime-main.ae1370ac.js",
+    "runtime-main.js.map": "/steps-wizard/static/js/runtime-main.ae1370ac.js.map",
+    "static/js/2.6551da13.chunk.js": "/steps-wizard/static/js/2.6551da13.chunk.js",
+    "static/js/2.6551da13.chunk.js.map": "/steps-wizard/static/js/2.6551da13.chunk.js.map",
+    "index.html": "/steps-wizard/index.html",
+    "static/css/main.f82ff9c8.chunk.css.map": "/steps-wizard/static/css/main.f82ff9c8.chunk.css.map",
+    "static/js/2.6551da13.chunk.js.LICENSE.txt": "/steps-wizard/static/js/2.6551da13.chunk.js.LICENSE.txt",
+    "static/media/default-logo.103b5fa1.svg": "/steps-wizard/static/media/default-logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae1370ac.js",
+    "static/js/2.6551da13.chunk.js",
+    "static/css/main.f82ff9c8.chunk.css",
+    "static/js/main.5ba95420.chunk.js"
+  ]
+}
